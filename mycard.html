@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    	<meta name=“viewport” content=“width=device-width, viewport-fit=cover”>
+		<link rel="stylesheet" type="text/css" href="css/mycard.css"/>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css"/>
+		<link rel="stylesheet" href="font/db_font.ttf"/>
+		<script src="https://cdn.bootcss.com/require.js/2.3.6/require.min.js"></script>
+		
+	    <script>
+	    var version = +new Date();
+	    require.config({
+	        urlArgs: 'v=' + version, 
+	        baseUrl: './',
+	        paths: {
+	            'clipboard':'https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min'
+	        }
+	    });
+	</script>
+		<!--<link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">-->
+		<title>我的名片</title>
+	</head>
+	<body>
+		<div id="my_detail">
+			<div class="company_logo">
+				<img src="img/logo.png"/>
+			</div>
+			<div class="my_logo">
+				<img src="img/logo_img.png"/>
+			</div>
+			<div class="my_name">
+				<p>ZHANG小</p>
+			</div>
+			<div class="my_company">
+				<p>湖南盛大金禧金融服务有限公司</p>
+			</div>
+			<div class="my_posiotion">
+				<p>分公司负责人</p>
+			</div>
+			<div class="client_num">
+				<img src="img/client.png"/>
+				<div class="client_text">
+					<div style="font-size: 1.8rem">456</div>
+					<div style="line-height: 1.2rem;">服务<br/>客户数量</div>
+					
+				</div>
+			</div>
+			<div class="phone">
+				<div class="phone_ico">
+					<img class="phone_img" src="img/phone.png"/>
+				</div>
+				<div class="phone_num">
+					<p>15542534251</p>
+				</div>
+				<div class="phone_btn">
+					<div><a href="tel:15542534251">拨打</a></div>
+				</div>
+			</div>
+			<div class="phone phones">
+				<div class="phone_ico">
+					<img class="wechat" src="img/wechat.png"/>
+				</div>
+				<div class="phone_num">
+					<p id="phone_num">15542534251</p>
+				</div>
+				<div class="phone_copy">
+					<button style="background: #fff;" id="phone_copy" class="spnBtn copy spnCompanyCopy" onclick="copy('.spnCompanyCopy')" data-clipboard-text="15542534251">复制</button>
+				</div>
+			</div>
+		</div>
+		<div class="product">
+			<div class="product_logo">
+				<img class="product_img" src="img/product.png"/>
+			</div>
+			<div class="product_title">
+				在投产品
+			</div>
+		</div>
+		<div class="products">
+			<div class="products_list">
+				<div class="order_con">
+					<div class="product_one">
+						<img src="img/line.png" alt="">
+					</div>	
+					<div class="detail_order">
+						<button class="order_btn">了解详情</button>
+					</div>
+				</div>								
+					<div class="product_name">
+					理财产品A					
+					</div>													
+				<div class="product_content">
+					推荐理由：<span>此处为推荐内容文字，不可自定义</span>
+				</div>
+				
+			</div>
+			<div class="products_list">
+				<div class="product_one">
+					<img src="img/line.png" alt="">
+				</div>	
+				<div class="product_name">
+					理财产品B
+				</div>
+				<div class="product_content">
+					推荐理由：<span>此处为推荐内容文字，不可自定义</span>
+				</div>
+			</div>
+		</div>
+		<div class="product">
+			<!--<div class="map_text">-->
+				<div class="product_logo">
+					<img class="loction_img" src="img/loction.png"/>
+				</div>
+				<div class="product_title">
+					我的位置
+				</div>			
+			<!--</div>	-->		
+			<div class="quanpin" style="width: 50%;text-align: right">
+				<a style="color: #c5923c" href="https://sendmall.jinxi88.com/app/index.php?i=1&c=entry&do=map&m=wx_lbsmap&lat=28.21347823&lng=112.97935279&tr=1">全屏显示</a>
+			</div>
+		</div>
+		<div class="loction">
+			<div class="map">
+				<iframe src="https://sendmall.jinxi88.com/app/index.php?i=1&c=entry&do=map&m=wx_lbsmap&lat=28.21347823&lng=112.97935279&tr=1" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+			</div>
+		</div>
+		<div class="btn">
+			<div class="share">
+				<a href="#">分享名片</a>
+			</div>
+			<div class='leave_a_message'>
+				<a href="#">给他留言</a>
+			</div>
+		</div>
+		<div class="self_introduction">
+			<div class="myself">
+				个人介绍
+			</div>
+			<div class="introduce_title">
+				君子爱财！取之有道
+			</div>
+			<div class="introduce_content">
+				此处是介绍内容文字
+			</div>
+		</div>
+		<div class="self_introductions">
+			<div id="selfs">
+				<div class="myself">
+				关于我们
+				</div>
+				<div class="introduce_title">
+					湖南盛大金禧金融服务有限公司
+				</div>
+				<div class="introduce_content container">
+					<video id="v4" controls="controls">
+						<source src="http://oss0.jinxi88.com/video/sdjx.mp4" type="video/mp4" />
+					</video>
+				    <img src="img/sdjx.png" id="ad">
+				    <img src="img/play2.png" id="btns">
+				</div>
+			</div>
+		</div>
+		<div class="divs"></div>
+		<!-- 红包 -->
+		<div class="mymodal">
+			<div class="cancel">
+				<img src="img/cancel.png" >
+			</div>
+			<div class="red_packet_modal">				
+				
+				<div class="big_red">
+					<img class="big_img" src="img/red_packets.png" alt="">
+					<div class="post_name">
+						<div class="p_ico"><img src="http://img3.imgtn.bdimg.com/it/u=3298005417,2605075504&fm=26&gp=0.jpg" alt=""></div>
+						<div class="p_name">XX的红包</div>
+					</div>
+					<div class="open_red"><a href="#"></a></div>
+				</div>		
+			</div>	
+		</div>
+		
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+		<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+		
+		 <script>
+			 // 红包功能
+			setTimeout(function(){
+				$(".big_red").css("display","block");
+				$('.red_packet_modal').addClass('animated tada');													
+			},1000);
+			
+			$(".cancel").click(function(){
+				$(".mymodal").css("display","none");							
+			})
+			//复制按钮
+			function copy(a) {
+			  require(['clipboard'],function(clipboard){
+			    $(a).text();
+			      (new clipboard(a)).on("success", function(a) {
+			        alert("复制成功")
+			    }).on("error", function(a) {})
+			  })
+			}
+//			 	视频播放	 	
+		    v4.volume = 0.1;
+		    /**为播放按钮绑定事件监听**/
+		    btns.onclick = function(){
+		      if(v4.paused){
+		        v4.play();
+		        btns.style.display = 'block';
+		      }else {
+		        v4.pause();
+		        btns.src = 'img/play2.png';
+		        
+		      }
+		    }			 
+		    
+		    v4.onplay = function(){ 
+		      ad.style.display = 'none';
+		      btns.src = 'img/play2.png';
+		      btns.style.display = 'none';
+		    }
+		    v4.onpause = function(){
+		      ad.style.display = 'none';
+		      btns.src = 'img/play2.png';
+		      btns.style.display = 'block';
+		    
+		    }
+		  </script>
+	</body>
+</html>
